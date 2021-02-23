@@ -1,49 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-    * {
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 97vh;
+    width: 99vw;
+    background: linear-gradient(45deg, #FFAB73, #FFD384, #FFF9B0, #FFAEC0);
+    background-size: 300%, 300%;
+    animation: colors 15s ease infinite;
+  }   
+  @keyframes colors {
+    0% {
+      background-position: 0%, 50%;
     }
 
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 97vh;
-      width: 99vw;
-      background: linear-gradient(45deg, #FFAB73, #FFD384, #FFF9B0, #FFAEC0);
-      background-size: 300%, 300%;
-      animation: colors 15s ease infinite;
-    }   
-    @keyframes colors {
-      0% {
-        background-position: 0%, 50%;
-      }
-
-      50% {
-        background-position: 100%, 50%;
-      }
-
-      100% {
-        background-position: 0%, 50%;
-      }
+    50% {
+      background-position: 100%, 50%;
     }
-    
-  </style>  
-</head>
+
+    100% {
+      background-position: 0%, 50%;
+    }
+  }
+  
+</style>  
+
 
 <body>
-  <h1>Camila linda</h1>
-</body>
-</html>
+  <div>
+    <h1>ToDo List</h1>
+    <ul>
+      <li *ngFor="let item of items"> 
+        {{item}} <button (click)="removeTarefa(item)">Remover</button>
+      </li>
+    </ul>
 
+    {{tarefa}}
+
+    <input type="text" [(ngModel)]="tarefa" >
+    <button (click)="addTarefa()" >adicionar</button>
+  </div>
+</body>
 
 
 
