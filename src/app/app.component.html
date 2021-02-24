@@ -1,53 +1,26 @@
-<style>
-  * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-  }
-
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 97vh;
-    width: 99vw;
-    background: linear-gradient(45deg, #FFAB73, #FFD384, #FFF9B0, #FFAEC0);
-    background-size: 300%, 300%;
-    animation: colors 15s ease infinite;
-  }   
-  @keyframes colors {
-    0% {
-      background-position: 0%, 50%;
-    }
-
-    50% {
-      background-position: 100%, 50%;
-    }
-
-    100% {
-      background-position: 0%, 50%;
-    }
-  }
-  
-</style>  
-
-
-<body>
-  <div>
-    <h1>ToDo List</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>  
+  <h1>ToDo List</h1> 
+<div>
+  <input name="tarefas"type="text" [(ngModel)]="tarefa" >
+  <button class="adicionar" (click)="addTarefa()" class="adicionar">adicionar</button>
     <ul>
-      <li *ngFor="let item of items"> 
-        {{item}} <button (click)="removeTarefa(item)">Remover</button>
-      </li>
-    </ul>
+     <li *ngFor="let item of items"> 
+     {{item}} <button (click)="removeTarefa(item)">Remover</button>
+    </li>
+  </ul>
+</div>  
 
-    {{tarefa}}
-
-    <input type="text" [(ngModel)]="tarefa" >
-    <button (click)="addTarefa()" >adicionar</button>
-  </div>
 </body>
 
+</html>
 
 
 <router-outlet></router-outlet>

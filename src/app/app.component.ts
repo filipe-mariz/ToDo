@@ -8,11 +8,15 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ToDo';
   public tarefa = "";
-  public items = ['item 1', 'item 2', 'item 3', 'item 4'];
+  public items = ['item 1'];
+  
   addTarefa() {
     this.items.push(this.tarefa)
   }
+
   removeTarefa(item: string) {
     this.items.splice(this.items.indexOf(item), 1)
   }
+
+
 }
