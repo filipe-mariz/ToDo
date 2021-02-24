@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, JoinColumn, OneToMany, PrimaryGeneratedColumn } from "typeorm";
+import Action from './ActionModel';
 
 @Entity('User')
 export default class User {
@@ -13,4 +14,10 @@ export default class User {
 
     @Column('varchar', { length: 50})
     password: string
+
+    @OneToMany(() => Action, action => action.user, {
+        cascade: ['insert', 'update']
+    })
+    @JoinColumn({ name: 'user_id' })
+    action: Action[];
 }
