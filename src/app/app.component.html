@@ -7,13 +7,20 @@
   <title>Document</title>
 </head>
 <body>  
-  <h1>ToDo List</h1> 
-<div>
-  <input name="tarefas"type="text" [(ngModel)]="tarefa" >
-  <button class="adicionar" (click)="addTarefa()" class="adicionar">adicionar</button>
-    <ul>
-     <li *ngFor="let item of items"> 
-     {{item}} <button (click)="removeTarefa(item)">Remover</button>
+   
+<div class="wrapper">
+   
+  <header>Check List</header> 
+  <div class="inputField">
+    <input name="tarefas"type="text" placeholder="Adicione um novo ítem" [(ngModel)]="tarefa" >
+    <button class="adicionar" (click)="addTarefa()" class="adicionar">Adicionar</button>
+  </div>
+
+    <ul class="todoList">
+     <li class="list" *ngFor="let item of items"> 
+     {{item}} 
+     <button class="completo">Ok</button>
+     <button class="remove" (click)="removeTarefa(item)">Remover</button>     
     </li>
   </ul>
 </div>  
