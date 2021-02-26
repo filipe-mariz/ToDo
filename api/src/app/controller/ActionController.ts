@@ -10,8 +10,7 @@ export default {
         const data = { action, user_id }
 
         const schemma = Yup.object().shape({
-            action: Yup.string().required(),
-            user_id: Yup.number().required()
+            action: Yup.string().required()
         }) 
 
         await schemma.validate(data, {
