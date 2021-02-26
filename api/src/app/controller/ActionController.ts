@@ -5,9 +5,9 @@ import Action from '../model/ActionModel';
 
 export default {
     async create(request: Request, response: Response) {
-        const { action, user_id } = request.body;
+        const { action } = request.body;
         const actionRepository = getRepository(Action);
-        const data = { action, user_id }
+        const data = { action }
 
         const schemma = Yup.object().shape({
             action: Yup.string().required()
