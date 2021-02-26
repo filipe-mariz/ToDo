@@ -19,7 +19,7 @@ export default {
 
         const ato = actionRepository.create(data);
         await actionRepository.save(ato);
-        response.status(201).json({ato})
+        response.status(201).json({ato});
     },
 
     async delete(request: Request, response: Response) {
