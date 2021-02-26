@@ -36,5 +36,7 @@ export default {
 
     async delete(request: Request, response: Response) {
         const results = await getRepository(User).delete(request.params.id);
+
+        return response.status(201).json({ message: "user deleted"})
     }
 }

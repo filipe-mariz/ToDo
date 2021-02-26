@@ -11,5 +11,5 @@ export default class Action {
 
     @ManyToOne(() => User, user => user.action)
     @JoinColumn({ name: 'user_id' })
-    user: User;
+    user: User; 
 }

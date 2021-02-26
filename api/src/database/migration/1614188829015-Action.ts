@@ -16,7 +16,7 @@ export class Action1614188829015 implements MigrationInterface {
                 },
 
                 {
-                    name: 'action',
+                    name: 'action', 
                     type: 'varchar',
                     isNullable: false
                 },

@@ -5,13 +5,14 @@ import Action from '../model/ActionModel';
 
 export default {
     async create(request: Request, response: Response) {
-        const { action } = request.body;
+        const { action, user_id } = request.body;
         const actionRepository = getRepository(Action);
-        const data = { action }
+        const data = { action, user_id }
 
         const schemma = Yup.object().shape({
-            action: Yup.string().required()
-        })
+            action: Yup.string().required(),
+            user_id: Yup.number().required()
+        }) 
 
         await schemma.validate(data, {
             abortEarly: false
@@ -24,6 +25,7 @@ export default {
 
     async delete(request: Request, response: Response) {
         const results = await getRepository(Action).delete(request.params.id);
+        
         return response.status(201).json({message: "Ação deletada"})
     }
 }
