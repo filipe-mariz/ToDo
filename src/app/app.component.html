@@ -13,7 +13,7 @@
    
   <header>Check List</header> 
   <div class="inputField">
-    <input name="tarefas"type="text" onfocus="this.value='';" placeholder="Adicione um novo ítem" [(ngModel)]="tarefa" >
+    <input name="tarefas"type="text" placeholder="Adicione um novo ítem" [(ngModel)]="tarefa" >
     <button class="adicionar" type="submit" (click)="addTarefa()" class="adicionar">Adicionar</button>
   </div>
 
@@ -23,7 +23,7 @@
      {{item}} 
      <input type="checkbox">
      <button class="remove" (click)="removeTarefa(item)">Remover</button> 
-     <button class="put" (click)="alterarTarefa(item)">Alterar</button>    
+     <button class="put" (click)="limparimput()" (click)="alterarTarefa(item)">Alterar</button>    
     </li>
   </ul>
 </div>
