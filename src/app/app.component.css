@@ -79,7 +79,9 @@ body {
   background-color: chartreuse;
 }
 .inputField button:hover,
-.footer button:hover{
+.footer button:hover,
+.todoList .remove:hover,
+.todoList .put:hover{
   background: #ffa601;
 }
 .wrapper .list {
@@ -87,10 +89,6 @@ body {
   align-items: center;
 }
 
-.wrapper .list button {
-  position: absolute;
-  left: 85%;
-}
 .wrapper .todoList{
   max-height: 250px;
   overflow-y: auto;
@@ -113,14 +111,28 @@ body {
   background-color: rgb(243, 67, 67);
   height: 40px;
   width: 60px;
-  margin: 0%;
-  position: relative;
+  margin: 0%;  
   border-radius: 3px;
   border-color: white;
   border: none;   
-  left: 40%;
+  position: absolute;
+  top: 6%;
+  left: 85%;
 }
 
+.todoList .put {
+  color: white;
+  background-color: rgb(67, 222, 243);
+  height: 40px;
+  width: 60px;
+  margin: 0%;  
+  border-radius: 3px;
+  border-color: white;
+  border: none;   
+  position: absolute;
+  top: 6%;
+  left: 70%;
+}
 .todoList .completo {
   color: white;
   background-color: rgb(67, 243, 91);
