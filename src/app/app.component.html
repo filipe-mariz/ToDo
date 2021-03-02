@@ -9,31 +9,29 @@
 </head>
 <body>  
    
-<div class="wrapper">
+  <div class="wrapper">
    
-  <header>Check List</header> 
-  <div class="inputField">
-    <input name="tarefas"type="text" placeholder="Adicione um novo ítem" [(ngModel)]="tarefa" >
-    <button class="adicionar" type="submit" (click)="addTarefa()" class="adicionar">Adicionar</button>
-  </div>
+    <header>Check List</header> 
+    <form>
+    <div class="inputField">
+      <input name="tarefas"type="text" placeholder="Adicione um novo ítem" [(ngModel)]="tarefa" >
+      <button class="adicionar" type="reset" (click)="addTarefa()">Adicionar</button>
+      
+    </div>
 
-  <div class="list">
-    <ul class="todoList">
-     <li class="list" *ngFor="let item of items"> 
-     {{item}} 
-     <input type="checkbox">
-     <button class="remove" (click)="removeTarefa(item)">Remover</button> 
-     <button class="put" (click)="limparimput()" (click)="alterarTarefa(item)">Alterar</button>    
-    </li>
-  </ul>
-</div>
-</div>  
-
+    <div class="list">
+     <ul class="todoList">
+        <li class="list" *ngFor="let item of items"> 
+          {{item}} 
+          <input type="checkbox">
+          <button class="remove" (click)="removeTarefa(item)">Remover</button>           
+          <button class="put" type="reset" (click)="alterarTarefa(item)">Alterar</button>          
+        </li>
+      </ul>
+    </div>
+  </form>
+</div> 
 </body>
-
-
 </html>
-
-
 
 <router-outlet></router-outlet>

@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ToDo';
   public tarefa = "";
-  public items = ['item 1'];
+  public items = [''];
   
   addTarefa() {
     this.items.push(this.tarefa)
@@ -17,15 +17,21 @@ export class AppComponent {
   alterarTarefa(item: string) {
     this.items.splice(this.items.indexOf(item), 1)
     this.items.push(this.tarefa)
-
+    
   }
 
   removeTarefa(item: string) {
     this.items.splice(this.items.indexOf(item), 1)
   }
 
-  limparimput() {
-    
+  limparimput(){
+    let btnClear = document.querySelector('button');
+    let input = document.querySelectorAll('input');
+
+    btnClear?.addEventListener('click', () => {
+      input.forEach(input => input.value = '')
+    })
+
   }
 
 
