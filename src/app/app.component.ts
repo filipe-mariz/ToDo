@@ -11,7 +11,12 @@ export class AppComponent {
   public items = [''];
   
   addTarefa() {
-    this.items.push(this.tarefa)
+    if(this.tarefa == "" || this.tarefa == null){
+      window.alert('Cadastre uma nova tarefa antes de adicionar...')
+    }else{
+      this.items.push(this.tarefa)
+    }
+    
   }
 
   alterarTarefa(item: string) {
