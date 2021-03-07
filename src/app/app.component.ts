@@ -21,23 +21,18 @@ export class AppComponent {
 
   alterarTarefa(item: string) {
     this.items.splice(this.items.indexOf(item), 1)
-    this.items.push(this.tarefa)
+    if(this.tarefa == "" || this.tarefa == null){
+      window.alert('Escreva uma nova tarefa antes de alterar...')
+      
+    }
+    
+    if(this.tarefa != "" || this.tarefa != null) {
+      this.items.push(this.tarefa)
+    }  
     
   }
 
   removeTarefa(item: string) {
     this.items.splice(this.items.indexOf(item), 1)
   }
-
-  limparimput(){
-    let btnClear = document.querySelector('button');
-    let input = document.querySelectorAll('input');
-
-    btnClear?.addEventListener('click', () => {
-      input.forEach(input => input.value = '')
-    })
-
-  }
-
-
 }
